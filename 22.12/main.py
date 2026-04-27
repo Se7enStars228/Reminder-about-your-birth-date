@@ -4,9 +4,9 @@ import re
 import telebot
 from db.days import table, add_date as add_date_to_db, delete_date as delete_date_from_db, update_all as update_all_in_db, view_all as get_all_dates
 
+# API_TOKEN = 'Введите ваш токен'
 
-
-
+# bot = telebot.TeleBot("Введите ваш токен")
 
 @bot.message_handler(commands=['start'])
 def send_welcome(message):
