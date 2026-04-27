@@ -11,7 +11,7 @@ class BotRestartHandler(FileSystemEventHandler):
         self.restart_bot()
     
     def restart_bot(self):
-        # Останавливаем предыдущий процесс
+        
         if self.process:
             try:
                 self.process.terminate()
@@ -26,13 +26,13 @@ class BotRestartHandler(FileSystemEventHandler):
         print("🔄 Перезапуск бота...")
         print("="*50 + "\n")
         
-        # Запуск нового процесса
+        
         self.process = subprocess.Popen([sys.executable, "main.py"])
     
     def on_modified(self, event):
         if event.src_path.endswith('.py') and not event.src_path.endswith('run.py'):
             print(f"\n📝 Обнаружено изменение в файле: {event.src_path}")
-            time.sleep(0.5)  # Задержка для завершения записи файла
+            time.sleep(0.5)  
             self.restart_bot()
 
 if __name__ == '__main__':
