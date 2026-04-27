@@ -25,9 +25,9 @@ def send_welcome(message):
 @bot.message_handler(commands=['help'])
 def send_help(message):
     bot.send_message(message.chat.id, "Список команд" 
-                        "\n\n/adddate - добавить дату"
-                        "\n/updatedate - обновить дату"
-                        "\n/deletedate - удалить дату"
+                        "\n\n/adddate - Добавить дату"
+                        "\n/updatedate - Обновить дату"
+                        "\n/deletedate - Удалить дату"
                         "\n/viewyourdate - показать ваши даты")
 
 @bot.message_handler(commands=['adddate'])
